@@ -1,0 +1,141 @@
+.chat-header {
+    border-bottom: 1px solid #e2e8f0;
+    background: #fff;
+    padding: 1rem 1.5rem;
+  
+    &__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    &__left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+  
+    &__icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 9999px;
+      background: linear-gradient(to right, #3b82f6, #9333ea);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  
+      .icon { color: #fff; }
+    }
+  
+    &__title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1e293b;
+    }
+  
+    &__status {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      color: #64748b;
+    }
+  
+    &__online {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+  
+      .chat-header__dot {
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 9999px;
+        background: #22c55e;
+        animation: pulse 1.5s infinite;
+      }
+    }
+  
+    &__separator {
+      color: #cbd5e1;
+    }
+  
+    &__right {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  
+    &__badge {
+      display: none;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.375rem 0.75rem;
+      background: #f8fafc;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #475569;
+  
+      .zap { color: #f59e0b; }
+    }
+  
+    @media (min-width: 640px) {
+      &__badge { display: flex; }
+    }
+  
+    &__button {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.2s;
+      background: #f1f5f9;
+      color: #475569;
+  
+      &:hover:not(:disabled) {
+        background: #e2e8f0;
+      }
+  
+      &:active:not(:disabled) {
+        transform: scale(0.95);
+      }
+  
+      &.loading {
+        background: #f1f5f9;
+        color: #94a3b8;
+        cursor: not-allowed;
+      }
+  
+      .spin {
+        animation: spin 1s linear infinite;
+      }
+  
+      .label {
+        display: none;
+      }
+  
+      @media (min-width: 640px) {
+        .label { display: inline; }
+      }
+    }
+  
+    &__session {
+      margin-top: 0.5rem;
+      font-size: 0.75rem;
+      color: #94a3b8;
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
